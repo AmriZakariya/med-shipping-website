@@ -1,90 +1,105 @@
 <?php
+/**
+ * ============================================================
+ *  Translations — English
+ *  Edit the VALUES (right side) — do not change the keys
+ * ============================================================
+ */
 return [
     // Navigation
-    'nav_home' => 'Home',
-    'nav_about' => 'About Us',
-    'nav_activities' => 'Our Activities',
-    'nav_network' => 'Our Network',
-    'nav_references' => 'References',
-    'nav_contact' => 'Contact',
-    
-    // Hero Section
-    'hero_title' => 'Transport & Logistics Solutions',
-    'hero_subtitle' => 'Your trusted partner for all your transport and logistics needs',
-    'hero_cta' => 'Request a Quote',
-    
-    // About Section
-    'about_title' => 'About Us',
-    'about_text' => 'Med Shipping Solutions is your trusted partner in transport and logistics. With years of experience, we offer comprehensive and customized solutions to meet all your maritime, road, and air transport needs.',
-    'about_mission' => 'Our Mission',
-    'about_mission_text' => 'To provide reliable, efficient, and cost-effective transport and logistics services to our clients while maintaining the highest standards of quality and safety.',
-    
-    // Activities Section
-    'activities_title' => 'Our Activities',
-    'activity_1_title' => 'Maritime Transport',
-    'activity_1_desc' => 'Complete sea freight services, import/export, and container consolidation',
-    'activity_2_title' => 'Road Transport',
-    'activity_2_desc' => 'National and international ground transport solutions with a modern fleet',
-    'activity_3_title' => 'Air Transport',
-    'activity_3_desc' => 'Fast and secure air shipments for your urgent deliveries',
-    'activity_4_title' => 'Logistics & Warehousing',
-    'activity_4_desc' => 'Inventory management, warehousing, and complete distribution solutions',
-    'activity_5_title' => 'Customs Clearance',
-    'activity_5_desc' => 'Complete customs services to facilitate your import-export operations',
-    'activity_6_title' => 'Consulting',
-    'activity_6_desc' => 'Supply chain optimization and transport consulting services',
-    
-    // Network Section
-    'network_title' => 'Our Network',
-    'network_subtitle' => 'International Presence',
-    'network_text' => 'Through our extensive network of international partners, we cover major global trade routes and offer seamless connectivity for your shipments.',
-    'network_coverage' => 'Global Coverage',
-    'network_partners' => 'Trusted Partners',
-    'network_routes' => 'Trade Routes',
-    
-    // References Section
-    'references_title' => 'Our References',
-    'references_subtitle' => 'They Trust Us',
-    'references_text' => 'We are proud to work with leading companies across various sectors.',
-    
-    // Contact Section
-    'contact_title' => 'Contact Us',
-    'contact_subtitle' => 'Request Your Free Quote',
-    'contact_name' => 'Full Name',
-    'contact_email' => 'Email',
-    'contact_phone' => 'Phone',
-    'contact_company' => 'Company',
-    'contact_service' => 'Service Needed',
-    'contact_message' => 'Your Message',
-    'contact_submit' => 'Send Request',
-    'contact_info' => 'Contact Information',
-    'contact_address' => 'Address',
-    'contact_success' => 'Your message has been sent successfully!',
-    'contact_error' => 'An error occurred. Please try again.',
-    
-    // Services Dropdown
-    'service_maritime' => 'Maritime Transport',
-    'service_road' => 'Road Transport',
-    'service_air' => 'Air Transport',
-    'service_logistics' => 'Logistics',
-    'service_customs' => 'Customs Clearance',
-    'service_other' => 'Other',
-    
-    // Footer
-    'footer_about' => 'About',
-    'footer_about_text' => 'Med Shipping Solutions - Your trusted partner in transport and logistics.',
-    'footer_quick_links' => 'Quick Links',
-    'footer_services' => 'Our Services',
-    'footer_rights' => 'All rights reserved.',
-    
+    'nav_home'        => 'Home',
+    'nav_about'       => 'About',
+    'nav_activities'  => 'Services',
+    'nav_network'     => 'Network',
+    'nav_references'  => 'Clients',
+    'nav_contact'     => 'Contact',
+
+    // Hero
+    'hero_title'      => 'Your Trusted<br><span>Logistics Partner</span>',
+    'hero_subtitle'   => 'Full-service maritime, road and air freight solutions from Morocco to the world.',
+    'hero_cta'        => 'Request a Quote',
+    'hero_cta_secondary' => 'Our Services',
+
+    // About
+    'about_title'     => 'About Us',
+    'about_text'      => 'Med Shipping Solutions (M2S) is a Casablanca-based company specialising in international freight and logistics. For over 15 years, we have supported businesses in their import-export operations with reliability, professionalism and agility.\n\nOur team of experts masters customs regulations, Incoterms and the specific requirements of each transport mode to guarantee smooth and compliant operations.',
+    'about_mission'   => 'Our Mission',
+    'about_mission_text' => 'To deliver tailor-made, efficient and cost-competitive logistics solutions, placing customer satisfaction at the heart of every decision. We believe that well-executed logistics transforms supply chains into competitive advantages.',
+    'about_values'    => 'Our Values',
+    'val_integrity'   => 'Integrity',
+    'val_excellence'  => 'Excellence',
+    'val_innovation'  => 'Innovation',
+    'val_partnership' => 'Partnership',
+
     // Why Choose Us
-    'why_title' => 'Why Choose Us',
-    'why_experience' => 'Experience',
-    'why_experience_text' => 'Years of expertise',
-    'why_reliability' => 'Reliability',
-    'why_reliability_text' => 'Quality service',
-    'why_network' => 'Global Network',
-    'why_network_text' => 'Worldwide coverage',
-    'why_support' => '24/7 Support',
-    'why_support_text' => 'Continuous assistance',
+    'why_title'            => 'Why Choose M2S?',
+    'why_experience'       => 'Proven Expertise',
+    'why_experience_text'  => 'Over 15 years of experience in international freight and logistics across Morocco and beyond.',
+    'why_reliability'      => 'Total Reliability',
+    'why_reliability_text' => 'Rigorous procedures and real-time tracking to ensure the punctuality and safety of your goods.',
+    'why_network'          => 'Global Network',
+    'why_network_text'     => 'A network of over 200 active partners in 50 countries covering your needs across 5 continents.',
+    'why_support'          => 'Dedicated Support',
+    'why_support_text'     => 'A team available 6 days a week to answer your questions, handle unforeseen events and provide real-time updates.',
+
+    // Activities
+    'activities_title' => 'Our Services',
+    'activities_sub'   => 'A comprehensive range of logistics solutions tailored to your needs',
+
+    'act_maritime'     => ['title' => 'Sea Freight', 'desc' => 'FCL & LCL, full container management, booking and real-time tracking across all major global shipping lines.'],
+    'act_road'         => ['title' => 'Road Freight', 'desc' => 'FTL and LTL across Europe, North Africa and the Middle East. Modern fleet with integrated GPS tracking.'],
+    'act_air'          => ['title' => 'Air Freight', 'desc' => 'Express and economy solutions for urgent shipments. Access to major global airports with optimised transit times.'],
+    'act_warehouse'    => ['title' => 'Warehousing & Distribution', 'desc' => 'Secure storage, stock management, picking/packing and last-mile delivery for your logistics flows.'],
+    'act_customs'      => ['title' => 'Customs Clearance', 'desc' => 'Licensed customs brokers, import/export declaration management, duty optimisation and regulatory compliance.'],
+    'act_consulting'   => ['title' => 'Logistics Consulting', 'desc' => 'Supply chain audits, cost optimisation, Incoterms advice and export development support.'],
+
+    // Network
+    'network_title'    => 'Our Network',
+    'network_text'     => 'A worldwide presence to address your needs wherever you are',
+    'stat_countries'   => 'Countries Covered',
+    'stat_partners'    => 'Active Partners',
+    'stat_routes'      => 'Shipping Routes',
+    'stat_years'       => 'Years of Experience',
+
+    // References
+    'references_title' => 'Client Sectors',
+    'references_text'  => 'We support companies from all industries in their logistics operations',
+    'ref_industry'     => 'Manufacturing',
+    'ref_retail'       => 'Retail & Distribution',
+    'ref_construction' => 'Construction & BTP',
+    'ref_health'       => 'Healthcare & Pharma',
+    'ref_agri'         => 'Agri-Food',
+    'ref_tech'         => 'Technology & High-Tech',
+
+    // Contact
+    'contact_title'    => 'Contact Us',
+    'contact_subtitle' => 'Tell us about your project. Our team will get back to you within 24 hours.',
+    'contact_name'     => 'Full Name',
+    'contact_email'    => 'Email Address',
+    'contact_phone'    => 'Phone Number',
+    'contact_company'  => 'Company (optional)',
+    'contact_service'  => 'Service Required',
+    'contact_message'  => 'Your Message',
+    'contact_submit'   => 'Send Request',
+    'contact_info'     => 'Our Details',
+    'contact_address'  => 'Address',
+    'contact_success'  => '✓ Your message has been sent. We will reply within 24h.',
+    'contact_error'    => 'Please fill in all required fields.',
+
+    // Service options
+    'service_select'   => 'Select a service...',
+    'service_maritime' => 'Sea Freight',
+    'service_road'     => 'Road Freight',
+    'service_air'      => 'Air Freight',
+    'service_warehouse'=> 'Warehousing & Distribution',
+    'service_customs'  => 'Customs Clearance',
+    'service_other'    => 'Other / Consulting',
+
+    // Footer
+    'footer_about'      => 'About',
+    'footer_about_text' => 'M2S — your trusted logistics partner from Casablanca. Tailored solutions for international import-export.',
+    'footer_quick_links'=> 'Quick Links',
+    'footer_services'   => 'Services',
+    'footer_connect'    => 'Follow Us',
+    'footer_rights'     => 'All rights reserved.',
 ];
