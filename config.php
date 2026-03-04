@@ -13,7 +13,7 @@ define('COMPANY_TAGLINE', 'Transport & Logistique');
 
 // ─── CONTACT DETAILS ──────────────────────────────────────
 define('CONTACT_EMAIL',   'contact@medshippingsolutions.com');
-define('CONTACT_PHONE',   '+212 XXX-XXXXXX');
+define('CONTACT_PHONE',   '+212695144661');
 define('CONTACT_ADDRESS', 'Casablanca, Morocco');
 define('CONTACT_HOURS_WEEK', 'Lun - Ven : 8h00 - 18h00');
 define('CONTACT_HOURS_SAT',  'Sam : 9h00 - 13h00');

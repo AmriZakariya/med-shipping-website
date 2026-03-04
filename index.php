@@ -345,7 +345,7 @@ function t($key) { global $lang; return isset($lang[$key]) ? $lang[$key] : $key;
                             <label for="name"><?= t('contact_name') ?> <span class="req">*</span></label>
                             <div class="input-wrap">
                                 <i class="fas fa-user input-icon"></i>
-                                <input type="text" id="name" name="name" autocomplete="name" placeholder="Jean Dupont">
+                                <input type="text" id="name" name="name" autocomplete="name" placeholder="<?= t('contact_name') ?>">
                             </div>
                             <span class="field-error" id="err-name"></span>
                         </div>
@@ -513,7 +513,6 @@ function t($key) { global $lang; return isset($lang[$key]) ? $lang[$key] : $key;
                     <a href="<?= SOCIAL_FACEBOOK ?>"  class="social-link" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="<?= SOCIAL_LINKEDIN ?>"  class="social-link" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="<?= SOCIAL_INSTAGRAM ?>" class="social-link" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="<?= SOCIAL_TWITTER ?>"   class="social-link" target="_blank" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
                     <a href="<?= SOCIAL_WHATSAPP ?>"  class="social-link" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
