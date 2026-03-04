@@ -324,61 +324,97 @@ function t($key) { global $lang; return isset($lang[$key]) ? $lang[$key] : $key;
 
         <div class="contact-grid">
 
-            <!-- Form -->
+            <!-- ── Form ───────────────────────────────────── -->
             <div class="contact-form-card reveal reveal-delay-1">
-                <h3><i class="fas fa-paper-plane" style="color: var(--ocean); margin-right: .5rem;"></i> <?= t('contact_title') ?></h3>
 
-                <div id="formAlert" class="alert"></div>
+                <div class="contact-form-header">
+                    <div class="contact-form-icon"><i class="fas fa-paper-plane"></i></div>
+                    <div>
+                        <h3><?= t('contact_title') ?></h3>
+                        <p class="contact-form-sub">Réponse sous 24h ouvrées</p>
+                    </div>
+                </div>
+
+                <!-- Success / Error toast (hidden by default) -->
+                <div id="formAlert" class="form-alert" role="alert" aria-live="polite"></div>
 
                 <form id="contactForm" method="POST" action="contact-handler.php" novalidate>
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name"><?= t('contact_name') ?> <span class="req">*</span></label>
-                            <input type="text" id="name" name="name" autocomplete="name" placeholder="Jean Dupont">
+                            <div class="input-wrap">
+                                <i class="fas fa-user input-icon"></i>
+                                <input type="text" id="name" name="name" autocomplete="name" placeholder="Jean Dupont">
+                            </div>
+                            <span class="field-error" id="err-name"></span>
                         </div>
                         <div class="form-group">
                             <label for="email"><?= t('contact_email') ?> <span class="req">*</span></label>
-                            <input type="email" id="email" name="email" autocomplete="email" placeholder="exemple@company.com">
+                            <div class="input-wrap">
+                                <i class="fas fa-envelope input-icon"></i>
+                                <input type="email" id="email" name="email" autocomplete="email" placeholder="exemple@company.com">
+                            </div>
+                            <span class="field-error" id="err-email"></span>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label for="phone"><?= t('contact_phone') ?> <span class="req">*</span></label>
-                            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+212 6XX XXX XXX">
+                            <div class="input-wrap">
+                                <i class="fas fa-phone input-icon"></i>
+                                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+212 6XX XXX XXX">
+                            </div>
+                            <span class="field-error" id="err-phone"></span>
                         </div>
                         <div class="form-group">
                             <label for="company"><?= t('contact_company') ?></label>
-                            <input type="text" id="company" name="company" autocomplete="organization" placeholder="Ma Société SARL">
+                            <div class="input-wrap">
+                                <i class="fas fa-building input-icon"></i>
+                                <input type="text" id="company" name="company" autocomplete="organization" placeholder="Ma Société SARL">
+                            </div>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="service"><?= t('contact_service') ?></label>
-                        <select id="service" name="service">
-                            <option value=""><?= t('service_select') ?></option>
-                            <option value="maritime"><?= t('service_maritime') ?></option>
-                            <option value="road"><?= t('service_road') ?></option>
-                            <option value="air"><?= t('service_air') ?></option>
-                            <option value="warehouse"><?= t('service_warehouse') ?></option>
-                            <option value="customs"><?= t('service_customs') ?></option>
-                            <option value="other"><?= t('service_other') ?></option>
-                        </select>
+                        <div class="input-wrap select-wrap">
+                            <i class="fas fa-boxes input-icon"></i>
+                            <select id="service" name="service">
+                                <option value=""><?= t('service_select') ?></option>
+                                <option value="maritime"><?= t('service_maritime') ?></option>
+                                <option value="road"><?= t('service_road') ?></option>
+                                <option value="air"><?= t('service_air') ?></option>
+                                <option value="warehouse"><?= t('service_warehouse') ?></option>
+                                <option value="customs"><?= t('service_customs') ?></option>
+                                <option value="other"><?= t('service_other') ?></option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <label for="message"><?= t('contact_message') ?> <span class="req">*</span></label>
                         <textarea id="message" name="message" rows="5" placeholder="Décrivez votre besoin logistique..."></textarea>
+                        <span class="field-error" id="err-message"></span>
                     </div>
 
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> <?= t('contact_submit') ?>
-                    </button>
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span class="btn-label"><i class="fas fa-paper-plane"></i> <?= t('contact_submit') ?></span>
+                            <span class="btn-loading" style="display:none;"><i class="fas fa-spinner fa-spin"></i> Envoi en cours…</span>
+                        </button>
+                        <a href="<?= WHATSAPP_URL ?>" class="whatsapp-alt-btn" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+
                 </form>
             </div>
 
-            <!-- Info -->
+            <!-- ── Info ───────────────────────────────────── -->
             <div class="contact-info-card reveal reveal-delay-2">
+
                 <h3><?= t('contact_info') ?></h3>
 
                 <div class="info-item">
@@ -393,7 +429,7 @@ function t($key) { global $lang; return isset($lang[$key]) ? $lang[$key] : $key;
                     <div class="info-icon-wrap"><i class="fas fa-phone"></i></div>
                     <div class="info-text">
                         <strong>Téléphone</strong>
-                        <span><a href="tel:<?= CONTACT_PHONE ?>" style="color: rgba(255,255,255,.75);"><?= CONTACT_PHONE ?></a></span>
+                        <span><a href="tel:<?= CONTACT_PHONE ?>" style="color:rgba(255,255,255,.8);"><?= CONTACT_PHONE ?></a></span>
                     </div>
                 </div>
 
@@ -401,7 +437,7 @@ function t($key) { global $lang; return isset($lang[$key]) ? $lang[$key] : $key;
                     <div class="info-icon-wrap"><i class="fas fa-envelope"></i></div>
                     <div class="info-text">
                         <strong>Email</strong>
-                        <span><a href="mailto:<?= CONTACT_EMAIL ?>" style="color: rgba(255,255,255,.75);"><?= CONTACT_EMAIL ?></a></span>
+                        <span><a href="mailto:<?= CONTACT_EMAIL ?>" style="color:rgba(255,255,255,.8);"><?= CONTACT_EMAIL ?></a></span>
                     </div>
                 </div>
 
@@ -413,12 +449,23 @@ function t($key) { global $lang; return isset($lang[$key]) ? $lang[$key] : $key;
                     </div>
                 </div>
 
+                <!-- WhatsApp Direct CTA -->
+                <a href="<?= WHATSAPP_URL ?>" class="whatsapp-cta-card" target="_blank" rel="noopener">
+                    <div class="whatsapp-cta-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div class="whatsapp-cta-text">
+                        <strong>Discussion rapide</strong>
+                        <span>Répondez en quelques minutes</span>
+                    </div>
+                    <i class="fas fa-arrow-right whatsapp-cta-arrow"></i>
+                </a>
+
                 <div class="social-links">
                     <a href="<?= SOCIAL_FACEBOOK ?>"  class="social-link" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="<?= SOCIAL_LINKEDIN ?>"  class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="<?= SOCIAL_INSTAGRAM ?>" class="social-link" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="<?= SOCIAL_WHATSAPP ?>"  class="social-link" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="<?= WHATSAPP_URL ?>"     class="social-link social-link--wa" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
+
             </div>
 
         </div>
@@ -485,7 +532,7 @@ function t($key) { global $lang; return isset($lang[$key]) ? $lang[$key] : $key;
     <button class="float-btn float-btn-top" aria-label="Retour en haut">
         <i class="fas fa-chevron-up"></i>
     </button>
-    <a href="<?= SOCIAL_WHATSAPP ?>" class="float-btn float-btn-wa" target="_blank" rel="noopener">
+    <a href="<?= WHATSAPP_URL ?>" class="float-btn float-btn-wa" target="_blank" rel="noopener">
         <i class="fab fa-whatsapp"></i>
         <span>WhatsApp</span>
     </a>
@@ -493,5 +540,93 @@ function t($key) { global $lang; return isset($lang[$key]) ? $lang[$key] : $key;
 
 <!-- JavaScript -->
 <script src="js/script.js"></script>
+<script>
+    /* ── Contact Form AJAX ─────────────────────────────────── */
+    (function () {
+        const form      = document.getElementById('contactForm');
+        const alertBox  = document.getElementById('formAlert');
+        const submitBtn = document.getElementById('submitBtn');
+        if (!form) return;
+
+        /* Field-level validators */
+        const validators = {
+            name:    v => v.trim().length >= 2  ? '' : 'Le nom est requis (min. 2 caractères).',
+            email:   v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? '' : 'Adresse email invalide.',
+            phone:   v => v.trim().length >= 8  ? '' : 'Numéro de téléphone requis.',
+            message: v => v.trim().length >= 10 ? '' : 'Le message doit contenir au moins 10 caractères.',
+        };
+
+        function showFieldError(id, msg) {
+            const el = document.getElementById('err-' + id);
+            const input = document.getElementById(id);
+            if (el) el.textContent = msg;
+            if (input) input.classList.toggle('error', !!msg);
+        }
+
+        function clearErrors() {
+            ['name','email','phone','message'].forEach(id => showFieldError(id, ''));
+            alertBox.className = 'form-alert';
+            alertBox.innerHTML = '';
+        }
+
+        function showAlert(type, msg) {
+            alertBox.className = 'form-alert form-alert--' + type + ' show';
+            alertBox.innerHTML = (type === 'success'
+                ? '<i class="fas fa-check-circle"></i> '
+                : '<i class="fas fa-exclamation-circle"></i> ') + msg;
+            alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function setLoading(on) {
+            submitBtn.disabled = on;
+            submitBtn.querySelector('.btn-label').style.display  = on ? 'none'         : '';
+            submitBtn.querySelector('.btn-loading').style.display = on ? 'inline-flex' : 'none';
+        }
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            clearErrors();
+
+            /* Client-side validation */
+            let valid = true;
+            Object.entries(validators).forEach(([id, fn]) => {
+                const err = fn(form[id]?.value ?? '');
+                if (err) { showFieldError(id, err); valid = false; }
+            });
+            if (!valid) return;
+
+            setLoading(true);
+
+            try {
+                const res  = await fetch('contact-handler.php', {
+                    method: 'POST',
+                    body:   new FormData(form),
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' },
+                });
+                const data = await res.json();
+
+                if (data.success) {
+                    showAlert('success', data.message || 'Message envoyé avec succès !');
+                    form.reset();
+                } else {
+                    showAlert('error', data.message || 'Une erreur est survenue. Veuillez réessayer.');
+                }
+            } catch {
+                showAlert('error', 'Impossible de joindre le serveur. Vérifiez votre connexion.');
+            } finally {
+                setLoading(false);
+            }
+        });
+
+        /* Live validation on blur */
+        ['name','email','phone','message'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('blur', () => {
+                const err = validators[id] ? validators[id](el.value) : '';
+                showFieldError(id, err);
+            });
+        });
+    })();
+</script>
 </body>
 </html>

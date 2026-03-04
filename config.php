@@ -18,12 +18,20 @@ define('CONTACT_ADDRESS', 'Casablanca, Morocco');
 define('CONTACT_HOURS_WEEK', 'Lun - Ven : 8h00 - 18h00');
 define('CONTACT_HOURS_SAT',  'Sam : 9h00 - 13h00');
 
+// ─── WHATSAPP ──────────────────────────────────────────────
+// Digits only, with country code, no spaces or dashes (e.g. 212612345678)
+define('WHATSAPP_NUMBER',  '212695144661');
+define('WHATSAPP_MESSAGE', 'Bonjour, je souhaite obtenir un devis pour vos services logistiques.');
+
+// Auto-built WhatsApp URL
+define('WHATSAPP_URL', 'https://wa.me/' . WHATSAPP_NUMBER . '?text=' . rawurlencode(WHATSAPP_MESSAGE));
+
 // ─── SOCIAL MEDIA ──────────────────────────────────────────
 define('SOCIAL_FACEBOOK',  '#');
 define('SOCIAL_LINKEDIN',  '#');
 define('SOCIAL_INSTAGRAM', '#');
 define('SOCIAL_TWITTER',   '#');
-define('SOCIAL_WHATSAPP',  '#');   // WhatsApp Business link
+define('SOCIAL_WHATSAPP',  WHATSAPP_URL);
 
 // ─── STATS (Network Section) ──────────────────────────────
 define('STAT_COUNTRIES', '50');
